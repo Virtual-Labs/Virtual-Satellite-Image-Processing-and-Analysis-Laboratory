@@ -1,0 +1,692 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="experiment">
+        <!-- The Experiment Document Container-->
+        <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+        <header class="default" id="experiment-header">
+            <div class="logo" id="experiment-header-logo">
+            <!-- Enclose the logo image of your lab or write it in 
+      text-->
+            <img src="../images/logo.jpg"></div>
+
+            <div class="heading" id="experiment-header-heading">
+                <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+                <a href="../index.html">Virtual Satellite Image Processing and Analysis Laboratory</a>
+            </div><!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+        </header><!-- The lab article is the main content area where all the 
+  experiment content sits-->
+
+        <article id="experiment-article">
+            <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+
+            <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
+
+            <header class="heading" id="experiment-article-heading">
+                Edge Detection
+            </header><!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+
+            <nav class="default" id="experiment-article-navigation">
+                <ul id="experiment-article-navigation-menu">
+                    <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          &lt;li&gt; tag as shown below-->
+                </ul>
+            </nav><!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+
+            <div id="experiment-article-sections">
+                <!-- First section of the article-->
+
+                <section id="experiment-article-section-1">
+                    <div class="icon" id="experiment-article-section-1-icon">
+                    <!-- Enclose the icon image of your lab -->
+                    <img src="../images/introduction.jpg"></div>
+                    <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+
+                    <div class="heading" id="experiment-article-section-1-heading">
+                        Aim
+                    </div><!-- Write the section content inside a paragraph 
+          element, You can also include images with &lt;img&gt; tag -->
+
+                    <div class="content" id="experiment-article-section-1-content">
+                        <div class="divContent">
+                            
+
+                            <p>&nbsp;</p>
+
+                            <p class="MsoNormal" style="line-height: 150%; text-align: right;">
+                            <a href="http://coep.vlab.co.in/?sub=33&amp;brch=91">
+                            <span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+
+                            <p><span style="font-size: medium; font-family: arial,helvetica,sans-serif; color: rgb(0, 0, 0);">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To get edge magnitude image from the corresponding input raw satellite image with general formats through various edge operators such as Robert operator, Sobel operator, Prewitt operator, etc.</span></p>
+                        </div>
+                    </div>
+                </section><!-- Second section of the article-->
+
+             
+                <section id="experiment-article-section-3">
+                    <div class="icon" id="experiment-article-section-3-icon">
+                    <!-- Enclose the icon image of your lab. -->
+                    <img src="../images/objective.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-3-heading">
+                        Theory
+                    </div>
+
+                    <div class="content" id="experiment-article-section-3-content">
+                        <div class="divContent">
+                           
+                        <p class="MsoNormal" style="line-height: 150%;">&nbsp;</p>
+
+                            <p class="MsoNormal" style="line-height: 150%; text-align: right;">
+                            <a href="../index.html"><span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+                           
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b><i>What Is An Edge?</i></b>
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>An edge is a set of connected pixels that lie on the boundary between two regions. The pixels on an edge are called edge points. Gray level / color / texture discontinuityacross an edge causes edge perception. Position & orientation of edge are key properties <br>
+                            You can see various kind of edges due to various reasons, below: </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Types of Edges</b>
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                Basically edges are of three types : Step edges, Ramp Edges and Pulse/Peak edges.
+                                <br>
+                                <ul>
+                                    <li>Step Edge : Abrupt discontinuities such as the boundary between land and water ponds or tall objects and their shadows are instances of step edges.</li>
+                                    <li>Ramp Edge : It indicates a more gradual transition from one feature to another.</li>
+                                    <li>Pulse/Peak Edge : These are like thin ribbon like features that are long but they also have a finite width.</li>
+                                </ul>
+                                for more details, see the recommended video for edges and its types <br>
+                                Graphically these types of edges can be describes as: <br>
+                                The following figure shows the three kinds of edges as: 
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Locating an Edge</b>
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                Edge Detection is Essential to mark the boundaries of objects. Area, shape, size, perimeter, etc. can be computed from clearly identified object boundaries. Intensity / color / texture / surface orientation gradient employed to detect edges. Gradient magnitude denotes the strength of edge. Gradient direction relates to direction of change of intensity / color. Edge is a local feature, marked by sharp discontinuity in the image property on either side of it. Most image processing methods to detect edges compute the gradient at two mutually perpendicular directions, and estimate the actual magnitude and orientation of the edge.
+                            </span></p>
+
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Gradient Directions</b>
+                            </span></p>
+
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                 Two mutually perpendicular gradient detectors are required to detect edges in an image, since edges may occur in any orientation. Using two mutually perpendicular orientations, an edge in any direction can be resolved in terms of these two orthogonal components . 
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Video For Edges and Its Types</b>
+                            </span></p>
+                            <br>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                There are several filters through which one can obtain gradient magnitude and direction. Some of the methods are :
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'><p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Robert Filter</b>
+                            </span></p></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                It uses two 2X2 masks to calculate gradient and it Operates on 2x2 size neighborhood. The two masks are : <br>
+                                Sample neighbor window : <br>
+                                where, r<sub>1</sub> = f(A) – f(D); <br>
+                                r<sub>2</sub> = f(B) – f(C) <br>
+                                gradient direction is calculated as : <br>
+                                direction = arctan(r<sub>2</sub>/r<sub>1</sub>)
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Video For Roberts Filter</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Prewitt Filter</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                It uses two 3x3 masks, which are as follows : <br>
+                                Gradient magnitude is calculated as : <br>
+                                and Gradient direction is calculated as : <br>
+                                θ = arctan( p<sub>1</sub>, p<sub>2</sub> ) clockwise with respect to column axis.  <br>
+                                Where,  p<sub>1</sub>, p<sub>2</sub> are gradient outputs from the masks.
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Sobel Filter</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                It is similar to prewitt operator except that it gives more weightage to four horizontal and veritcal neighbors. The masks in sobel operator are : <br>
+                                Gradient magnitude is calculated as : <br>
+                                and Gradient direction is calculated as: <br>
+                                θ = arctan( s<sub>1</sub>, s<sub>2</sub> ) <br>
+                                Where,  s<sub>1</sub>, s<sub>2</sub> are gradient outputs from the masks.
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Video For Sobel Filter</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Logarithmic Of Gaussian (LoG) Filter</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                The Laplacian operator is based on the Laplace equation given by <br>
+                                Laplacian operator is discretized version of the above equation and is based on second derivatives along x and y directions. The discrete version of the second derivative operator are : [1 -2 1] and [1 -2 1]<sup>T</sup> in the horizontal and vertical directions. Superimposing the two, we get the discrete Laplace operator as <br>
+                                Laplacian operator cannot give the information regarding gradient directions. But it is faster than any other gradient operators as it involves only one filter mask. Laplacian operator amilifies the noise pixels to a great extent. So, it is recommended to use any smoothing operator before using laplacian operator. <br>
+                                Thus, the best smoothing operator, i.e., gaussian filter is used for smoothing. <br>
+                                The complete operation can be expressed as: <br>
+                                Thus, it is named as Laplacian of Gaussian (LoG).
+                            </span></p>
+                            </div></div></section>
+
+
+                <section id="experiment-article-section-5">
+                    <div class="icon" id="experiment-article-section-5-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/manual.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-5-heading">
+                        Procedure
+                    </div>
+
+                    <div class="content" id="experiment-article-section-5-content">
+                        <div class="divContent">
+                         
+                          <p class="MsoNormal" style="line-height: 150%;">
+                            <b><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            Step by step Procedure</span></b><span lang="EN-IN"
+                            style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>:</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>These are the general guide lines and steps that should be followed to perform the experiment :</b></span></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="1" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Select Image</strong>
+                                <br>
+                                Select the image on which you want to perform the experiment. <br>
+                                You can also upload your own images by clicking on "upload more images".
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="2" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Select band for which you want to get edge output.</strong>
+                                <br>
+                                Edge detector will give you edge output for the band you will select here.
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="3" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Select method of edge detection</strong>
+                                <br>
+                                You can select any method of edge detection from the available options as: <br>
+                                Then enter threshold, sigma and direction values as required according to the method you select. For more details about these parameters refer to the theory of experiment.  
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on the button "Process"</span>
+                                <br>
+                                This will give you the Original band image and output of edge detection operation.
+                                </li>
+                            </ol>
+                            </div><br>
+                        </div>
+                </section>
+
+                <section id="experiment-article-section-4">
+                    <div class="icon" id="experiment-article-section-4-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/simulation.jpg"></div>
+
+                    <div class="heading" id=
+                    "experiment-article-section-4-heading">
+                        Simulator
+                    </div>
+
+                    <div class="content" id="experiment-article-section-4-content">
+                        <div class="divContent">
+                            <p><a href="../siplab-simulation/index.php" target="_blank">Click here for Simulator</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experiment-article-section-10">
+                    <div class="icon" id="experiment-article-section-10-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/simulation.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-10-heading">
+                        Interpretation
+                    </div>
+
+                    <div class="content" id="experiment-article-section-10-content">
+                        <div class="divContent">
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Here we will discuss how to interpret the outputs produced by experiment 5, i.e., Edge Detection. So, please follow the steps as shown below to get the sample output for interpretation.</span></p>
+
+                            <br>
+
+                            <ol start="1" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select "inputimage" as your experimental image. "inputimage" is a satellite image having 6 bands stored in BIL format as raw image. It has the dimension 801x1401. Since in our discussion we will cover upto its 4th band, so it is necessary to understand that what the first 4 bands of this image represents. The first four bands are as follows: blue, green, red and infra-red respectively.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="2" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select band for which you want to find the edge output. Here, we are selecting band "5".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="3" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select method of edge detection. Here we will choose "Sobel". (already set as default)<br>
+                                Sobel operator uses two perpendicular masks for detecting horizontal and vertical edges. So, here you have an option to select whether you want only horizontal edges, vertical edges or both. Consequently, you will also have to enter threshold values seperately.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Enter "Edge threshold value" as "0.05", "Vertical Threshold" as "0.05" and "Horizontal threshold" as "0.05".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; Threshold limits the output to be displayed. By entering 0.05 as threshold you are actually limiting it to show only the magnitude and direction where it is above 5% of highest gray level that can be displayed, which is 255.</span></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on "Process" button
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; You will get the output as: </span></p>
+
+
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Edge Detected Image</b></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Gradient Magnitude Image</b></span></p>
+
+                              <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Gradient Direction Image</b></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                               Here you will get the output at each pixel which corresponds to an edge pixel. You can compare the edge image with the original image produced in any other experiment.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>EDGE DETECTORS</b></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                              The image shown below is band 1 of sample image “quickbird.jpg”.</span></p>
+
+                              <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Prewitt operator</b></span></p>
+
+
+                            <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Image below highlights the edges present in the sample band. The bright lines are edges where there is abrupt change in gray values of the pixels. The prewitt operator is employed with threshold 0.5, gradient threshold- vertical 0.2 and gradient threshold- horizontal 0.3. The gradient was computed in both directions. It is to be noted that whenever gradient values fall above 0.5 then those pixels are identified as edges. <br>
+                                The following two figures represent the gradient magnitude at a point and gradient direction respectively. Bright pixels have higher gradient magnitude and gradient direction depicts the direction in which there is more change in gray value. Here first image is gradient magnitude and that follows is gradient direction image.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span><b>Robert operator</b></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span>Threshold value used is 0.2. Values falling above this threshold are identified as edges. The bright lines represent those points where values are higher than 0.2.</p>
+
+                            <br>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span><b>Laplacian of Gaussian (LoG)</b></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span>Threshold chosen to generate edge image below is 0.7 and sigma as 0.5. Laplacian filters are derivative filters and are prone to noise detection. Hence LoG operator smoothens the test image and then applies the laplacian operator. Hence the name LoG.</p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span><b>Canny operator</b></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span>Threshold =0.2 and sigma=0.5. Please note that in the experiment we enter lower threshold value. The program automatically calculates the higher threshold value (i.e twice the lower threshold). The image shown below represents edges as bright lines. The values that fall above higher threshold are labeled as edges. And those falling below lower threshold are discarded as not edges. Those falling in-between higher and lower are evaluated for nearness. Pixels with weak connectivity are not joined whereas pixels with higher chance of connectivity are connected.</p>
+
+
+                           
+                        </div>
+                    </div>
+                </section>
+
+             <!--   <section id="experiment-article-section-7">
+                    <div class="icon" id="experiment-article-section-7-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                  <!--  <img src="../images/quizzes.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-7-heading">
+                        Review Questions
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-7-content">
+                        <div class="divContent">
+                            <h2 style="color: red;"><strong style=
+                            "text-decoration: underline"><span style=
+                            "font-family: arial,helvetica,sans-serif; color: rgb(255, 0, 0);">
+                            <span style="font-size: large;">Review
+                            Questions</span></span></strong></h2>
+
+                            <h2>&nbsp;</h2>
+
+                            <p class="MsoNormal" style=
+                            "line-height: 150%; text-align: right;"><a href=
+                            "http://coep.vlab.co.in/?sub=33&amp;brch=91"><span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+
+                            <p>&nbsp;</p>
+
+                            <h1 style=
+                            "margin-left: 0.75in; text-align: justify; text-indent: -0.25in; line-height: 150%; page-break-after: auto;">
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            <span style="">1.<span style=
+                            'font: 7pt "Times New Roman";'>&nbsp;&nbsp;&nbsp;</span></span></span>
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            What are different sources of errors in RTD
+                            measurement?</span></h1>
+
+                            <p>&nbsp;</p>
+
+                            <h1 style=
+                            "margin-left: 0.75in; text-align: justify; text-indent: -0.25in; line-height: 150%; page-break-after: auto;">
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            <span style="">2.<span style=
+                            'font: 7pt "Times New Roman";'>&nbsp;&nbsp;&nbsp;</span></span></span>
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            What is lead wire compensation?</span></h1>
+
+                            <p>&nbsp;</p>
+
+                            
+                            <h1>&nbsp;</h1>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            
+                        </div>
+                    </div>
+                </section> -->
+
+                <section id="experiment-article-section-8">
+                    <div class="icon" id="experiment-article-section-8-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/quizzes.jpg"></div>
+
+                    <div class="heading" id=
+                    "experiment-article-section-8-heading">
+                        Reference
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-8-content">
+                        <div class="divContent">
+                            
+
+                            <p class="PreformattedText"><b style=""><span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Books</span></b><span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>:</span></p>
+
+                            <p class="PreformattedText">&nbsp;</p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [1] Rafael C. Gonzalez, Richard E. Woods and Steven L. Eddins (2004), <i> Digital Image Processing using MATLAB</i>, Pearson Education</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="margin-left: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [2]  J.A. Richards and X. Jia, Remote Sensing Digital Image Analysis, 4<sup>th</sup> edition, Springer, Berlin, 2006</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="margin-left: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [3] R. Schowengerdt, Remote Sensing: Models and Methods for Image Processing, 3<sup>rd</sup> edition, Academic Press, Mass., 2007</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style=
+                            "text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [4] J.R. Jensen, Digital Image Processing: A Remote Sensing Perspective, 4<sup>th</sup> edition, Prentice-Hall, NJ, 2005</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [5] P.M. Mather and M. Koch, Computer Analysis of Remotely Sensed Images, John Wiley, NY, 2011</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [6] B. Tso and P.M. Mather, Classification Methods for Remotely Sensed Images, 2<sup>nd</sup> edition, CRC Press, 2009</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [7] Tim Morris (2004), Computer Vision and Image Processing, Palgrave Macmillan</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [8] Bhabatosh Chanda and Dwijest Dutta Majumder (2002), Digital Image Processing and Analysis</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [9] A. K. Jain (1989), Fundamentals of Digital Image Processing. Englewood Cliffs, NJ: Prentice Hall</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [10] Raman Maini and Himanshu Aggarwal (2010), A comprehensive review of image enhancement techniques, Journal of computing, Vol. 2, Issue. 3, pno 8-13, 2010</span></p>
+                        </div>
+                    </div>
+                </section>
+
+            <!--    <section id="experiment-article-section-9">
+                    <div class="icon" id="experiment-article-section-9-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                   <!--  <img src="../images/quizzes.jpg"></div>
+
+                   <!-- <div class="heading" id=
+                    "experiment-article-section-9-heading">
+                        Photo Gallery
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-9-content">
+                        <p><b>Q1.</b> Time taken for one complete oscillation
+                        is called Time Period of the oscillator.<br>
+                        <input id="q1" name="q1" type="radio" value="1">
+                        True<br>
+                        <input id="q1" name="q1" type="radio" value="0">
+                        False<br>
+                        <br>
+                        <b>Q2.</b> Time period of the oscillator is constant
+                        for given values of mass, length and initial
+                        conditions.<br>
+                        <input id="q2" name="q2" type="radio" value="1">
+                        True<br></p>
+                    </div>
+                </section> -->
+            </div>
+        </article>
+	
+
+        <footer  class="footer">
+            <!-- Put the content here -->
+            <div style="margin-left:40%; margin-right:40% ">
+            <a href="../license/index.html" target="_blank" style="margin:auto"> Licensing Terms </a>
+            </div>
+      </footer> 
+    </div>
+</body>
+</html>

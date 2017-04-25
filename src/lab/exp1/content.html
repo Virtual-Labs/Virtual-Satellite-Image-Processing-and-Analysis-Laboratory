@@ -1,0 +1,759 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="experiment">
+        <!-- The Experiment Document Container-->
+        <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+        <header class="default" id="experiment-header">
+            <div class="logo" id="experiment-header-logo">
+            <!-- Enclose the logo image of your lab or write it in 
+      text-->
+            <img src="../images/logo.jpg"></div>
+
+            <div class="heading" id="experiment-header-heading">
+                <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+                <a href="../index.html">Virtual Satellite Image Processing and Analysis Laboratory</a>
+            </div><!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+        </header><!-- The lab article is the main content area where all the 
+  experiment content sits-->
+
+        <article id="experiment-article">
+            <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+
+            <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
+
+            <header class="heading" id="experiment-article-heading">
+                Viewing images in different bands
+            </header><!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+
+            <nav class="default" id="experiment-article-navigation">
+                <ul id="experiment-article-navigation-menu">
+                    <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          &lt;li&gt; tag as shown below-->
+                </ul>
+            </nav><!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+
+            <div id="experiment-article-sections">
+                <!-- First section of the article-->
+
+                <section id="experiment-article-section-1">
+                    <div class="icon" id="experiment-article-section-1-icon">
+                    <!-- Enclose the icon image of your lab -->
+                    <img src="../images/introduction.jpg"></div>
+                    <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+
+                    <div class="heading" id="experiment-article-section-1-heading">
+                        Aim
+                    </div><!-- Write the section content inside a paragraph 
+          element, You can also include images with &lt;img&gt; tag -->
+
+                    <div class="content" id="experiment-article-section-1-content">
+                        <div class="divContent">
+                            
+
+                            <p>&nbsp;</p>
+
+                            <p class="MsoNormal" style="line-height: 150%; text-align: right;">
+                            <a href="http://coep.vlab.co.in/?sub=33&amp;brch=91">
+                            <span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+
+                            <p><span style="font-size: medium; font-family: arial,helvetica,sans-serif; color: rgb(0, 0, 0);">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To view single band or color composite, subset image and its pixel data of raw satellite image or general image formats with image histograms.</span></p>
+                        </div>
+                    </div>
+                </section><!-- Second section of the article-->
+
+             
+                <section id="experiment-article-section-3">
+                    <div class="icon" id="experiment-article-section-3-icon">
+                    <!-- Enclose the icon image of your lab. -->
+                    <img src="../images/objective.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-3-heading">
+                        Theory
+                    </div>
+
+                    <div class="content" id="experiment-article-section-3-content">
+                        <div class="divContent">
+                           
+                        <p class="MsoNormal" style="line-height: 150%;">&nbsp;</p>
+
+                            <p class="MsoNormal" style="line-height: 150%; text-align: right;">
+                            <a href="../index.html"><span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+                           
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Many of the satellite images we see have very different colors than the ones we are used to seeing with our own eyes.</span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'><b>Why do satellite images look so different?</b></span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Below are two pictures (figure 1) of the exact same location. The picture on the left is a "true color" image, this means that the picture shows objects in the same colors that your eyes would normally see. The picture on the right is a "false color" image, this means that the colors have been assigned to three different wavelengths that your eyes might not normally see.</span></p>
+                            <br>
+                            <img src="images/true321_01.gif" style="height: 215px; width: 208px;"> &nbsp;
+                            <img src="images/false432_02.gif" style="height: 215px; width: 208px;"> <br>
+                            <figcaption style="margin-left: 5%;">Figure 1</figcaption> <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Humans cannot see light past the visible spectrum, but satellites are able to detect wavelengths into the ultraviolet and infrared. Satellites fly high above the earth, using instruments to collect data at specific wavelengths. These data can then be used to build an image. Satellite instruments are able to obtain many images of the same location, at the same time. Each image highlights a different part of the electromagnetic spectrum.  As the data in some bands are not in visible spectrum we need to assign visible colors to perceive it from our eyes. </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>In order to generate a color display of a satellite image on the monitor, we need to choose
+                            <ul>
+                                <li>Data to represent in red color</li>
+                                <li>Data to represent in green color</li>
+                                <li>Data to represent in blue color</li>
+                            </ul>
+                            Such a display is known as a color composite.
+                            </span></p>
+
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>A False Color Composite (FCC) is formed when the data assigned to red / green / blue color on the display is collected outside the visible region. A standard FCC comprises: Wavelength of Data Display
+                            <ul>
+                                <li>Near Infrared wavelength in  Red Color</li>
+                                <li>Red wavelength in Green Color</li>
+                                <li>Green wavelength in Blue color</li>
+                            </ul></span></p>
+
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>A Natural Color Composite (NCC) is formed when the data assigned to red/green/blue is collected in the same wavelengths. Wavelength of Data Display
+                            <ul>
+                                <li>Red wavelength Red Color</li>
+                                <li>Green wavelength Green Color</li>
+                                <li>Blue wavelength Blue color</li>
+                            </ul></span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>A black/white image is one that has no color but only white, black and shades of gray. The smallest value at a pixel is 0 (black). The largest value is 255 (white). Intermediate values represent shades of gray, from black increasing towards white. For L=8, black = 0, white = 255 </span></p>
+                            <br>
+
+                            <b>Gray Scale Image</b> <br>
+
+                            <img src="images/grayscale.jpg" style="height: 232px; width: 518px;" align="center">
+                            <br>
+                            <b>Natural Color Composite</b> <br>
+                            <img src="images/tcc.jpg" style="height: 232px; width: 518px;" align="center">
+
+                            <br>
+                            <b>False Color Composite</b> <br>
+                            <img src="images/fcc.jpg" style="height: 232px; width: 518px;" align="center">
+
+                            <br>
+                            <b>Video For Satellite Image Display and Color Composites</b> <br>
+
+                            <h2 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            Interleaving Formats for Satellite Images</span></h2>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Satellite images have several bands according to the number of sensors used to collect information. To make it easier to store, the satellite data is bundled into a single file. In this file, all the bands are stored in a particular manner, which depends on type of interleaving used. Basically there are three types of interleaving: Band Interleaved By Line (BIL), Band Sequential (BSQ), Band Interleaved By Pixel (BIP).</span></p>
+                            <br>
+
+                            <h2 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            Band interleaved by line (BIL)</span></h2>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'><p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>storage format- MxN Image; K Bands; One row on ground <br>
+                            B11 B12 … B1N <br>
+                            B21 B22 … B2N <br>
+                            … <br>
+                            Bk1 Bk2 … BkN
+                            </span></p></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>A single file o n disk or CD contains M.K rows, each having N columns; Every K rows in the file correspond to ONE ROW ON THE GROUND. BIL is a popular format for storing multi-spectral images, and supported by most remote sensing software (ERDAS, PCI, …). Well suited when multi-band data analysis is required.  Lot of data I/O involved when access to a single band image is needed on sequential access systems. Moderate overhead on random access systems.</span></p>
+
+                            <br>
+                            <h2 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            Band sequential format (BSQ)</span></h2>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'><p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>It involves storing one full single band image after another <br>
+                            B11 B12 … B1N <br>
+                            B21 B22 … B2N <br>
+                            … <br>
+                            BM1 BM2 … BMN
+                            </span></p></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>The image for the second band, …, up to Band K follow. Ideally suited when the multi-band image is processed one band at a time, such as image enhancement, neighbour-hood filtering, etc. More overheads when all band values are required at each pixel.</span></p>
+
+                            <br>
+                            <h2 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            Band interleaved by pixel (BIP)</span></h2>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>One of the earliest digital formats used for satellite data is band interleaved by pixel (BIP) format. This format treats pixels as the separate storage unit. Brightness values for each pixel are stored one after another. It is practical to use if all bands in an image are to be used.</span></p>
+
+                            <br>
+                            <h1 style="font-weight: bold"><span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            Image Histogram</span></h1>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>An image histogram is a type of histogram that acts as a graphical representation of the tonal distribution in a digital image. It plots the number of pixels for each tonal value. By looking at the histogram for a specific image a viewer will be able to judge the entire tonal distribution at a glance.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>In the field of computer vision, image histograms can be useful tools for thresholding. Because the information contained in the graph is a representation of pixel distribution as a function of tonal variation, image histograms can be analyzed for peaks and/or valleys which can then be used to determine a threshold value. This threshold value can then be used for edge detection, image segmentation.</span></p>
+                            </div></div></section>
+
+
+                
+
+                <section id="experiment-article-section-5">
+                    <div class="icon" id="experiment-article-section-5-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/manual.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-5-heading">
+                        Procedure
+                    </div>
+
+                    <div class="content" id="experiment-article-section-5-content">
+                        <div class="divContent">
+                         
+                          <p class="MsoNormal" style="line-height: 150%;">
+                            <b><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            Step by step Procedure</span></b><span lang="EN-IN"
+                            style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>:</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>These are the general guide lines and steps that should be followed to perform the experiment :</b></span></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="1" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Select Image</strong>
+                                <br>
+                                Select the image on which you want to perform the experiment. <br>
+                                <img src="images/proc1.bmp" style="height: 315px; width: 80%;">
+                                <br>
+                                You can also upload your own images by clicking on "upload more images".
+                                </span></li>
+                            </ol> <br>
+                            <img src="images/proc6.bmp" style="height: 315px; width: 80%;">
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="2" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Choose band combination</strong>
+                                <br>
+                                As we know that an image can have more than three bands, so we need to specify which bands should be used for display purpose. Alternatively if you want to display a single band, You can click on "View a Band Particular Band Of Image".
+                                </span></li>
+                            </ol>
+                            <br>
+                            <img src="images/proc2.bmp" style="height: 315px; width: 80%;">
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="3" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Click on "Display" button</strong>
+                                <br>
+                                This will take the parameters you provided and process them. The output will be shown to you as: <br>
+                                <br>
+                            	<img src="images/proc3.bmp" style="height: 315px; width: 80%;">
+                                If you want to view the pixel details of image or subset of image, you can proceed as :
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on the button "Pick Upper Left Corner" and click on the original image produced as the output of above steps. This will insert the coordinates of picked point in a appropriate text boxes. Similarly you will have to pick the lower right corner. If you want to see the pixel values of each band  at a single point, then first click on "Pixel values of each band at a point", then pick the point from original image. Alternatively, you can also manually input the coordinates in the text boxes provided for the same.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="5" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                If you want to save the subset image that is going to be produced according to the subset window chosen by you in step 4, then click on "Save subset image in your user space for future use". By doing so, you can use this subset image also in the experiments.
+                                </span></li>
+                            </ol>
+                            <br>
+                            <img src="images/proc3.bmp" style="height: 315px; width: 80%;">
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="6" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on "Generate" button, you will get the desired output.
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span><span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'><br></span><span lang="EN-IN"
+                            style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>&nbsp;</span></p>
+                            </div><br>
+                        </div>
+                </section>
+
+                <section id="experiment-article-section-4">
+                    <div class="icon" id="experiment-article-section-4-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/simulation.jpg"></div>
+
+                    <div class="heading" id=
+                    "experiment-article-section-4-heading">
+                        Simulator
+                    </div>
+
+                    <div class="content" id="experiment-article-section-4-content">
+                        <div class="divContent">
+                            <p><a href="../siplab-simulation/index.php" target="_blank">Click here for Simulator</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experiment-article-section-10">
+                    <div class="icon" id="experiment-article-section-10-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/simulation.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-10-heading">
+                        Interpretation
+                    </div>
+
+                    <div class="content" id="experiment-article-section-10-content">
+                        <div class="divContent">
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>In the field of computer vision, image histograms can be useful tools for thresholding. Because the information contained in the graph is a representation of pixel distribution as a function of tonal variation, image histograms can be analyzed for peaks and/or valleys which can then be used to determine a threshold value. This threshold value can then be used for edge detection, image segmentation.</span></p>
+
+                            <br>
+
+                            <ol start="1" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select "inputimage" as your experimental image. "inputimage" is a satellite image having 6 bands stored in BIL format as raw image. It has the dimension 801x1401. Since in our discussion we will cover upto its 4th band, so it is necessary to understand that what the first 4 bands of this image represents. The first four bands are as follows: blue, green, red and infra-red respectively.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="2" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Choose "view color composite", it is already set as default.
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="3" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select band 4 for red band, band 3 for green band and band 2 for blue band. As according to the theory described in theory section of Virtual Lab, we already know that a standard FCC uses infra-red wave band as red display, red wave band as green display and green wave band as blue display. So, the same we are doing here to get the standard FCC of "inputimage".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on Display button
+                                </span></li>
+                            </ol>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>After the processing you will get an image. This is the standard FCC of "inputimage". You can also save it by right clicking it and then clicking on "save image as". The image will look like:</span></p> <br>
+
+                            <img src="images/exp1_fcc.jpg" style="height: 315px; width: 80%;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>You will also get histogram for the bands selected for display. The histogram in our case will be:</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Histogram for Infra-red  Band (displayed as red in fcc):</b></span></p>
+                            <br>
+                            <img src="images/exp1_hist_red.jpg" style="height: 380px; width: 589px;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                              Here, you can easily notice that most of the pixels are assigned between grey level 10 to 20. Also, another majority of pixels are assigned to gray level 60 to 120. We, will be comparing the histograms of the three bands (green, red and infra-red) used in the example for understanding what we can easily get from image histogram.</span></p>
+
+                              <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Histogram for Red Band  (displayed as green in fcc):</b></span></p>
+                            <br>
+                            <img src="images/exp1_hist_green.jpg" style="height: 380px; width: 589px;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                              Here, it can be noticed that most of the pixels are assigned between gray level 25 to 70 and a wide range of grey level is not used.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Histogram for Green Band (displayed as blue in fcc): </b></span></p>
+                            <br>
+                            <img src="images/exp1_hist_blue.jpg" style="height: 380px; width: 589px;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                              Here, it is almost similar to red band, i.e., most of the pixels are assigned between gray level 30 to 70. Now, as seen from the histogram of the three bands, it can be concluded that the contrast of infra-red band is highest among these three bands. As it has been provided in theory (see video lecture), that for a good contrast a histogram should be well distributed among all the gray levels. Other attributes that we can get from histogram are: mean, median, variance, standard deviation, etc. (see video lecture).</span></p>
+
+                              <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Now, we are going to interpret the image at pixel level. To do so, continue your steps in the experiment as:</b></span></p>
+
+
+                            <ol start="5" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select the option "Image subset and pixel value of each band". (It is set by default)<br>
+                                Here, you can provide the upper and lower coordinates of the subset image that you want to extract and for which you want to see the pixel values. It can be done either manually or by clicking the respective buttons. But, to match the values with our example values, follow the steps.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="6" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                 Enter "83" in "minimum row value".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="7" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Enter "88" in "maximum row value".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="8" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Enter "309" in "minimum column value".
+                                </span></li>
+                            </ol>
+
+                            <ol start="9" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Enter "314" in "maximum column value" <br>
+                                By doing so, we are going to extract a 6x6 subset from the image.
+                                </span></li>
+                            </ol>
+
+                            <ol start="10" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on generate button.
+                                </span></li>
+                            </ol>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            You will get the subset image and its band values, which will be as follows:</span></p>
+                            <br>
+                            <b>subset image</b> <br>
+                            <img src="images/exp1_subset.jpg" style="height: 5px; width: 5px;">
+                            <br>
+                            <b>pixel image</b>
+                            <br>
+                            <img src="images/t1.png" style="height: 380px; width: 300px;">
+                            <br>
+                            <img src="images/t2.png" style="height: 380px; width: 300px;">
+
+
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            This shows the pixel data for all 6 bands, while we have used only three band 4, band 3, band2. So, we will be discussing the pixel values of these three bands only.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Here it can be noticed that in this subset of image, the pixel values for band 4 are highest, while in other bands these values are very less comparatively. Now we will see the spectrum for various objects on earth in different wavebands to understand the concept.</span></p>
+                            <br>
+                            <img src="images/spectral response.jpg" style="height: 380px; width: 589px;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Since, pixels values are the measure of  % reflectance, we can use this graph to compare our pixel value with its  %reflectance. It can be easily noticed that the curve shown in green color (healthy vegetation) can be compared to our pixel values as its value before infra-red and after infra-red region are very less as compared to that in infra-red region.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            So, in this case we can interpret that regions shown in perfect red color in standard FCC as the regions of healthy vegetation.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Here, it can also be noticed from the curve that in case of water, %reflectance is nearly zero after red band. So, you can take it as an exercise to see whether the pixel values of image predict the same or not. Just make a subset of a region shown below and take a look on pixel values of each band for the subset marked below (red circle marked at upper left corner). You will get what kind of region it is using the curve shown.</span></p>
+                            <br>
+                            <img src="images/exp1_test.JPG" style="height: 367px; width: 654px;">
+                        </div>
+                    </div>
+                </section>
+
+             <!--   <section id="experiment-article-section-7">
+                    <div class="icon" id="experiment-article-section-7-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                  <!--  <img src="../images/quizzes.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-7-heading">
+                        Review Questions
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-7-content">
+                        <div class="divContent">
+                            <h2 style="color: red;"><strong style=
+                            "text-decoration: underline"><span style=
+                            "font-family: arial,helvetica,sans-serif; color: rgb(255, 0, 0);">
+                            <span style="font-size: large;">Review
+                            Questions</span></span></strong></h2>
+
+                            <h2>&nbsp;</h2>
+
+                            <p class="MsoNormal" style=
+                            "line-height: 150%; text-align: right;"><a href=
+                            "http://coep.vlab.co.in/?sub=33&amp;brch=91"><span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+
+                            <p>&nbsp;</p>
+
+                            <h1 style=
+                            "margin-left: 0.75in; text-align: justify; text-indent: -0.25in; line-height: 150%; page-break-after: auto;">
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            <span style="">1.<span style=
+                            'font: 7pt "Times New Roman";'>&nbsp;&nbsp;&nbsp;</span></span></span>
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            What are different sources of errors in RTD
+                            measurement?</span></h1>
+
+                            <p>&nbsp;</p>
+
+                            <h1 style=
+                            "margin-left: 0.75in; text-align: justify; text-indent: -0.25in; line-height: 150%; page-break-after: auto;">
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            <span style="">2.<span style=
+                            'font: 7pt "Times New Roman";'>&nbsp;&nbsp;&nbsp;</span></span></span>
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            What is lead wire compensation?</span></h1>
+
+                            <p>&nbsp;</p>
+
+                            
+                            <h1>&nbsp;</h1>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            
+                        </div>
+                    </div>
+                </section> -->
+
+                <section id="experiment-article-section-8">
+                    <div class="icon" id="experiment-article-section-8-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/quizzes.jpg"></div>
+
+                    <div class="heading" id=
+                    "experiment-article-section-8-heading">
+                        Reference
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-8-content">
+                        <div class="divContent">
+                            
+
+                            <p class="PreformattedText"><b style=""><span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Books</span></b><span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>:</span></p>
+
+                            <p class="PreformattedText">&nbsp;</p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [1] Rafael C. Gonzalez, Richard E. Woods and Steven L. Eddins (2004), <i> Digital Image Processing using MATLAB</i>, Pearson Education</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="margin-left: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [2]  J.A. Richards and X. Jia, Remote Sensing Digital Image Analysis, 4<sup>th</sup> edition, Springer, Berlin, 2006</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="margin-left: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [3] R. Schowengerdt, Remote Sensing: Models and Methods for Image Processing, 3<sup>rd</sup> edition, Academic Press, Mass., 2007</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style=
+                            "text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [4] J.R. Jensen, Digital Image Processing: A Remote Sensing Perspective, 4<sup>th</sup> edition, Prentice-Hall, NJ, 2005</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [5] P.M. Mather and M. Koch, Computer Analysis of Remotely Sensed Images, John Wiley, NY, 2011</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [6] B. Tso and P.M. Mather, Classification Methods for Remotely Sensed Images, 2<sup>nd</sup> edition, CRC Press, 2009</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [7] Tim Morris (2004), Computer Vision and Image Processing, Palgrave Macmillan</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [8] Bhabatosh Chanda and Dwijest Dutta Majumder (2002), Digital Image Processing and Analysis</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [9] A. K. Jain (1989), Fundamentals of Digital Image Processing. Englewood Cliffs, NJ: Prentice Hall</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [10] Raman Maini and Himanshu Aggarwal (2010), A comprehensive review of image enhancement techniques, Journal of computing, Vol. 2, Issue. 3, pno 8-13, 2010</span></p>
+                        </div>
+                    </div>
+                </section>
+
+            <!--    <section id="experiment-article-section-9">
+                    <div class="icon" id="experiment-article-section-9-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                   <!--  <img src="../images/quizzes.jpg"></div>
+
+                   <!-- <div class="heading" id=
+                    "experiment-article-section-9-heading">
+                        Photo Gallery
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-9-content">
+                        <p><b>Q1.</b> Time taken for one complete oscillation
+                        is called Time Period of the oscillator.<br>
+                        <input id="q1" name="q1" type="radio" value="1">
+                        True<br>
+                        <input id="q1" name="q1" type="radio" value="0">
+                        False<br>
+                        <br>
+                        <b>Q2.</b> Time period of the oscillator is constant
+                        for given values of mass, length and initial
+                        conditions.<br>
+                        <input id="q2" name="q2" type="radio" value="1">
+                        True<br></p>
+                    </div>
+                </section> -->
+            </div>
+        </article>
+	
+
+        <footer  class="footer">
+            <!-- Put the content here -->
+            <div style="margin-left:40%; margin-right:40% ">
+            <a href="../license/index.html" target="_blank" style="margin:auto"> Licensing Terms </a>
+            </div>
+      </footer> 
+    </div>
+</body>
+</html>

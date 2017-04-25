@@ -1,0 +1,681 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="experiment">
+        <!-- The Experiment Document Container-->
+        <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+        <header class="default" id="experiment-header">
+            <div class="logo" id="experiment-header-logo">
+            <!-- Enclose the logo image of your lab or write it in 
+      text-->
+            <img src="../images/logo.jpg"></div>
+
+            <div class="heading" id="experiment-header-heading">
+                <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+                <a href="../index.html">Virtual Satellite Image Processing and Analysis Laboratory</a>
+            </div><!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+        </header><!-- The lab article is the main content area where all the 
+  experiment content sits-->
+
+        <article id="experiment-article">
+            <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+
+            <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
+
+            <header class="heading" id="experiment-article-heading">
+                Frequency Domain Filtering (Fourier Transform)
+            </header><!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+
+            <nav class="default" id="experiment-article-navigation">
+                <ul id="experiment-article-navigation-menu">
+                    <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          &lt;li&gt; tag as shown below-->
+                </ul>
+            </nav><!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+
+            <div id="experiment-article-sections">
+                <!-- First section of the article-->
+
+                <section id="experiment-article-section-1">
+                    <div class="icon" id="experiment-article-section-1-icon">
+                    <!-- Enclose the icon image of your lab -->
+                    <img src="../images/introduction.jpg"></div>
+                    <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+
+                    <div class="heading" id="experiment-article-section-1-heading">
+                        Aim
+                    </div><!-- Write the section content inside a paragraph 
+          element, You can also include images with &lt;img&gt; tag -->
+
+                    <div class="content" id="experiment-article-section-1-content">
+                        <div class="divContent">
+                            
+
+                            <p>&nbsp;</p>
+
+                            <p class="MsoNormal" style="line-height: 150%; text-align: right;">
+                            <a href="http://coep.vlab.co.in/?sub=33&amp;brch=91">
+                            <span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+
+                            <p><span style="font-size: medium; font-family: arial,helvetica,sans-serif; color: rgb(0, 0, 0);">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To get fourier spectrum of the input raw satellite image or image with general formats, apply gaussian and butterworth filtering to the same.</span></p>
+                        </div>
+                    </div>
+                </section><!-- Second section of the article-->
+
+             
+                <section id="experiment-article-section-3">
+                    <div class="icon" id="experiment-article-section-3-icon">
+                    <!-- Enclose the icon image of your lab. -->
+                    <img src="../images/objective.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-3-heading">
+                        Theory
+                    </div>
+
+                    <div class="content" id="experiment-article-section-3-content">
+                        <div class="divContent">
+                           
+                        <p class="MsoNormal" style="line-height: 150%;">&nbsp;</p>
+
+                            <p class="MsoNormal" style="line-height: 150%; text-align: right;">
+                            <a href="../index.html"><span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+                           
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                                <h2>Discrete 2D Fourier Tansform</h2>
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>A transform, including the Fourier Transform (FT), is essentially a mathematical mapping process. A transform maps image data into a different mathematical space via a transformation equation. Most of the discrete transforms map the image data from the spatial domain to the frequency domain, where all the pixels in the input (spatial domain) contribute to each value in the output (frequency domain). Rapidly changing brightness values over short distances correspond to high frequency terms, slowly changing brightness values correspond to low frequency terms.</span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Display of Fourier Transform</b>
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                The Fourier transform consists of complex floating point numbers, stored with a data type of complex. For convenience of viewing, we shift the origin to the center of the image by applying the properties of periodicity and translation with u<sub>0</sub> = M/2 and v<sub>0</sub> = N/2.
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Advantages of Centering Fourier Transform Display</b> <br>
+                            <ul>
+                                <li>Easier to interpret the spectral information with the origin in the center and frequency increasing radially outward from the center.</li>
+                                <li>Makes it easier to visualize the filtering in the frequency domain.</li>
+                                <li>Visually more appealing</li>
+                            </ul>
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Video for Fourier Transform and its Display settings:</b>
+                            </span></p>
+
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Butterworth Low pass Filter</b>
+                            </span></p>
+
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                 The Butterworth low pass filter has a frequency response given by the function:
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                Where, D(u,v) is the distance of any frequency component (u,v) from the origin. D<sub>o</sub> is the cut-off frequency.
+                            </span></p>
+                            <br>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>2-D Gaussian Low Pass Filter</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'><p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            The frequency response of the 2-D Gaussian Lowpass Filter is given by:
+                            </span></p></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                Where, D(u,v) is the distance of any frequency component (u,v) from the origin. D<sub>o</sub> is the cut-off frequency.
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Highpass Filters</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                Similar to Gaussian and Butterworth low pass filters, there are Gaussian and Butterworth high pass filters too. These filters can be expressed as:
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Gaussian high pass filter</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Butterworth high pass filter</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Video for Low Pass and High Pass Filtering:</b>
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Video for Gaussian and Butterworth Filtering: </b>
+                            </span></p>
+                            </div></div></section>
+
+
+                <section id="experiment-article-section-5">
+                    <div class="icon" id="experiment-article-section-5-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/manual.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-5-heading">
+                        Procedure
+                    </div>
+
+                    <div class="content" id="experiment-article-section-5-content">
+                        <div class="divContent">
+                         
+                          <p class="MsoNormal" style="line-height: 150%;">
+                            <b><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            Step by step Procedure</span></b><span lang="EN-IN"
+                            style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>:</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>These are the general guide lines and steps that should be followed to perform the experiment :</b></span></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="1" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Select Image</strong>
+                                <br>
+                                Select the image on which you want to perform the experiment. <br>
+                                You can also upload your own images by clicking on "upload more images".
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="2" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Select band combination for displaying the image.</strong>
+                                <br>
+                                As we know that an image can have more than three bands, so we need to specify which bands should be used for display purpose.
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="3" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Select transforming operation</strong>
+                                <br>
+                                You can select any operation that you want to perform. "Spectrum Only" will give you the Fourier Magnitude of original image. Other two filters are provided to show the utility of fourier transform in image processing. For more details you can read the theory of experiment. <br>
+                                For filtering you will have to specify whether you want low pass or high pass filtering. So, select low pass or high pass from the option "Band".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select the specific band for which you want to see the fourier transform output.
+                                </li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="5" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Enter other parameters specific to filters and then click on the button "Process". <br>
+                                This will give you the Original image and output of filtering operation. For more details regarding the filter specific parameters, read the theory of experiment.
+                                </li>
+                            </ol>
+                            </div><br>
+                        </div>
+                </section>
+
+                <section id="experiment-article-section-4">
+                    <div class="icon" id="experiment-article-section-4-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/simulation.jpg"></div>
+
+                    <div class="heading" id=
+                    "experiment-article-section-4-heading">
+                        Simulator
+                    </div>
+
+                    <div class="content" id="experiment-article-section-4-content">
+                        <div class="divContent">
+                            <p><a href="../siplab-simulation/index.php" target="_blank">Click here for Simulator</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experiment-article-section-10">
+                    <div class="icon" id="experiment-article-section-10-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/simulation.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-10-heading">
+                        Interpretation
+                    </div>
+
+                    <div class="content" id="experiment-article-section-10-content">
+                        <div class="divContent">
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Here we will discuss how to interpret the outputs produced by experiment 6, i.e., Discrete 2D Fourier Transform. So, please follow the steps as shown below to get the sample output for interpretation.</span></p>
+
+                            <br>
+
+                            <ol start="1" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select "inputimage" as your experimental image. "inputimage" is a satellite image having 6 bands stored in BIL format as raw image. It has the dimension 801x1401. Since in our discussion we will cover up to its 4th band, so it is necessary to understand that what the first 4 bands of this image represents. The first four bands are as follows: blue, green, red and infra-red respectively.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="2" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select band 4 for red band, band 3 for green band and band 2 for blue band. As according to the theory described in theory section of Virtual Lab, we already know that a standard FCC uses infra-red wave band as red display, red wave band as green display and green wave band as blue display. So, the same we are doing here to get the standard FCC of "inputimage".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="3" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select "Spectrum Only" for operation option. <br> In Fourier transform actually what we are intended to do is to get the magnitude of fourier transform as image. i.e., magnitude spectrum of fourier transform. After understanding the basics of magnitude spectrum of fourier transform, one can perform any filtering operation which can work in frequency domain rather than time domain. Here, we are going to describe the spectrum in terms of what the centre point of spectrum reveals?, where low and high frequency components reside?
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                For getting spectrum of a particular band in addition to combined spectrum of three bands, select band. Here we will select "Red".
+                                </span></li>
+                            </ol>
+                            
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="5" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on "Process" button. <br>
+                                You will get following as outputs: <br>
+                                Original Image <br>
+                                Magnitude spectrum for the color composite <br>
+                                Magnitude spectrum for Red band <br>
+                                Interpretation from spectrum
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; The spectrums shown to you as outputs are actually transformed spectrums. The (0,0) in original spectrum lies at top left corner while for better understanding it is transformed to the centre of spectrum.</span></p>
+
+
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>High frequency components of image</b> <br> The centre of the spectrum shows the lowest frequency component in the original image and increases radially away from the centre.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Low frequency components of image</b> <br>
+                            Points away from the centre shows the high frequency components in the original image. </span></p>
+
+                              <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Edges</b></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                               If you are able to see some linear features in the spectrum then those are revealing edge components in image and there directions shows the major edge directions in image.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>How to perform filtering?</b></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                              Using any filter which can operate in frequency domain like Gaussian and Butterworth filter (see theory for details), can be used to perform two basic filtering operations : Low pass filtering and High pass filtering.</span></p>
+
+                              <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Low pass filtering</b></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Low pass filtering using spectrum is done as : <br>
+
+                            First we choose the low pass band according to the parameters specific to applied method (Gaussian or Butterworth)<br>
+
+                            Then we have to take the inverse fourier transform for the output of first step and we get the desired low pass filtered image</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>High pass filtering</b></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            High pass filtering using spectrum is done as:<br>
+
+                            First we choose the high pass band according to the parameters specific to applied method (Gaussian or Butterworth)<br>
+
+                            Then we have to take the inverse fourier transform for the output of first step and we get the desired high pass filtered image.</span></p>
+
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span><b>Gaussian filtering in frequency domain</b></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span>The first figure represents the original image (quickbird.jpg) while second is the <b>lowpass</b> filtered image. Observe the blurring in areas enclosed in oval figures by comparing both images. All the high frequency components that fall beyond the radius specified (sigma1) are attenuated and low frequency components are kept in tact.</p>
+
+                            <br>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span>The figure above represents Gaussian high pass filtering in frequency domain. The edges are associated with high frequency components. Similarly there are other areas where one would find abrupt changes in gray levels. All such areas correspond to high frequency components. In high pass filtering the low frequency components which fall within a radius specified by sigma are cut off from the image. Hence only high frequency components remain. Observe that edges and other areas come up in the above image. </p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span><b>Butterworth filtering in frequency domain</b></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span>The image shown above is <b>butterworth lowpass</b> filtered image of quickbird.jpg sample image. Observe the blurring effect the lowpass filtering has produced. This filtering was done with sigma1=2 and sigma2=2. You should note in lowpass filtering the high frequency components are suppressed. Hence the edges, which belong to high frequency components are blurred or made less sharp.
+                            </p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; The image shown above is the result of high pass butterworth filtering. All the low frequency components are suppressed here. Edges and other regions associated with high frequency components are improved.</span>
+                            </p>
+
+
+                           
+                        </div>
+                    </div>
+                </section>
+
+             <!--   <section id="experiment-article-section-7">
+                    <div class="icon" id="experiment-article-section-7-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                  <!--  <img src="../images/quizzes.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-7-heading">
+                        Review Questions
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-7-content">
+                        <div class="divContent">
+                            <h2 style="color: red;"><strong style=
+                            "text-decoration: underline"><span style=
+                            "font-family: arial,helvetica,sans-serif; color: rgb(255, 0, 0);">
+                            <span style="font-size: large;">Review
+                            Questions</span></span></strong></h2>
+
+                            <h2>&nbsp;</h2>
+
+                            <p class="MsoNormal" style=
+                            "line-height: 150%; text-align: right;"><a href=
+                            "http://coep.vlab.co.in/?sub=33&amp;brch=91"><span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+
+                            <p>&nbsp;</p>
+
+                            <h1 style=
+                            "margin-left: 0.75in; text-align: justify; text-indent: -0.25in; line-height: 150%; page-break-after: auto;">
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            <span style="">1.<span style=
+                            'font: 7pt "Times New Roman";'>&nbsp;&nbsp;&nbsp;</span></span></span>
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            What are different sources of errors in RTD
+                            measurement?</span></h1>
+
+                            <p>&nbsp;</p>
+
+                            <h1 style=
+                            "margin-left: 0.75in; text-align: justify; text-indent: -0.25in; line-height: 150%; page-break-after: auto;">
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            <span style="">2.<span style=
+                            'font: 7pt "Times New Roman";'>&nbsp;&nbsp;&nbsp;</span></span></span>
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            What is lead wire compensation?</span></h1>
+
+                            <p>&nbsp;</p>
+
+                            
+                            <h1>&nbsp;</h1>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            
+                        </div>
+                    </div>
+                </section> -->
+
+                <section id="experiment-article-section-8">
+                    <div class="icon" id="experiment-article-section-8-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/quizzes.jpg"></div>
+
+                    <div class="heading" id=
+                    "experiment-article-section-8-heading">
+                        Reference
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-8-content">
+                        <div class="divContent">
+                            
+
+                            <p class="PreformattedText"><b style=""><span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Books</span></b><span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>:</span></p>
+
+                            <p class="PreformattedText">&nbsp;</p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [1] Rafael C. Gonzalez, Richard E. Woods and Steven L. Eddins (2004), <i> Digital Image Processing using MATLAB</i>, Pearson Education</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="margin-left: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [2]  J.A. Richards and X. Jia, Remote Sensing Digital Image Analysis, 4<sup>th</sup> edition, Springer, Berlin, 2006</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="margin-left: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [3] R. Schowengerdt, Remote Sensing: Models and Methods for Image Processing, 3<sup>rd</sup> edition, Academic Press, Mass., 2007</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style=
+                            "text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [4] J.R. Jensen, Digital Image Processing: A Remote Sensing Perspective, 4<sup>th</sup> edition, Prentice-Hall, NJ, 2005</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [5] P.M. Mather and M. Koch, Computer Analysis of Remotely Sensed Images, John Wiley, NY, 2011</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [6] B. Tso and P.M. Mather, Classification Methods for Remotely Sensed Images, 2<sup>nd</sup> edition, CRC Press, 2009</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [7] Tim Morris (2004), Computer Vision and Image Processing, Palgrave Macmillan</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [8] Bhabatosh Chanda and Dwijest Dutta Majumder (2002), Digital Image Processing and Analysis</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [9] A. K. Jain (1989), Fundamentals of Digital Image Processing. Englewood Cliffs, NJ: Prentice Hall</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [10] Raman Maini and Himanshu Aggarwal (2010), A comprehensive review of image enhancement techniques, Journal of computing, Vol. 2, Issue. 3, pno 8-13, 2010</span></p>
+                        </div>
+                    </div>
+                </section>
+
+            <!--    <section id="experiment-article-section-9">
+                    <div class="icon" id="experiment-article-section-9-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                   <!--  <img src="../images/quizzes.jpg"></div>
+
+                   <!-- <div class="heading" id=
+                    "experiment-article-section-9-heading">
+                        Photo Gallery
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-9-content">
+                        <p><b>Q1.</b> Time taken for one complete oscillation
+                        is called Time Period of the oscillator.<br>
+                        <input id="q1" name="q1" type="radio" value="1">
+                        True<br>
+                        <input id="q1" name="q1" type="radio" value="0">
+                        False<br>
+                        <br>
+                        <b>Q2.</b> Time period of the oscillator is constant
+                        for given values of mass, length and initial
+                        conditions.<br>
+                        <input id="q2" name="q2" type="radio" value="1">
+                        True<br></p>
+                    </div>
+                </section> -->
+            </div>
+        </article>
+	
+
+        <footer  class="footer">
+            <!-- Put the content here -->
+            <div style="margin-left:40%; margin-right:40% ">
+            <a href="../license/index.html" target="_blank" style="margin:auto"> Licensing Terms </a>
+            </div>
+      </footer> 
+    </div>
+</body>
+</html>

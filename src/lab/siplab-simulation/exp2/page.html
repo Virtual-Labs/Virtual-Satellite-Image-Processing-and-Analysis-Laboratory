@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+
+	<link rel="stylesheet" href="bootstrap.css"/>
+    <link rel="stylesheet" href="../bower_components/Font-Awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="build.css"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Ajanta Backend System</title>
+
+<!-- Bootstrap Core CSS -->
+<link href="<?php echo base_url(); ?>assets/css/sb-admin.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="<?php echo base_url();?>assets/libraries/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link
+	href="<?php echo base_url();?>assets/libraries/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+
+<!-- Custom CSS -->
+<link href="<?php echo base_url();?>assets/css/sb-admin.css"
+	rel="stylesheet">
+
+<!-- Morris Charts CSS -->
+<!--     <link href="css/plugins/morris.css" rel="stylesheet"> -->
+
+<!-- JQuery Example -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+           
+<!--<script>
+$('.nav-item').click(function() {
+	
+    $(this).addClass('active');
+});
+
+</script> -->
+
+<script>
+            window.onload = function () {
+                document.getElementById("painting").className = "active";
+            }
+        </script>
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<nav id="mainNav"
+		class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse">
+		<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarExample"
+			aria-controls="navbarExample" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="<?php echo site_url('home/index/painting');?>">Revisting Ajanta</a>
+		<div class="collapse navbar-collapse" id="navbarExample">
+			<ul class="sidebar-nav navbar-nav">
+				<li class="nav-item">
+				<a class="nav-link" href="<?php echo site_url('home/index/painting');?>">
+				<i class="fa fa-fw fa-camera"></i> Paintings</a></li>
+				
+				<li class="nav-item">
+				<a class="nav-link" href="<?php echo site_url('home/index/stories');?>"><i
+						class="fa fa-fw fa-commenting-o"></i> Stories</a></li>
+				
+				<li class="nav-item">
+				<a class="nav-link" href="<?php echo site_url('home/index/animation');?>"><i
+						class="fa fa-fw fa-fast-forward"></i> Animation</a></li>
+				<li class="nav-item"><a class="nav-link" href="<?php echo site_url('home/index/rest');?>"><i
+						class="fa fa-fw fa-underline"></i> Check REST</a></li>
+				
+			</ul>
+			
+		</div>
+	</nav>

@@ -1,0 +1,816 @@
+<!-- This file needs to be edited by the lab developer to suit
+the requirements of their lab in particular.-->
+<!-- Add class="default" to include any element as it is
+specified in default.html. 
+Do not include class="default" to the elements that you want to
+edit -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="experiment">
+        <!-- The Experiment Document Container-->
+        <!-- The lab Header contains the logo and the name of the lab,
+  usually displayed on the top of the page-->
+
+        <header class="default" id="experiment-header">
+            <div class="logo" id="experiment-header-logo">
+            <!-- Enclose the logo image of your lab or write it in 
+      text-->
+            <img src="../images/logo.jpg"></div>
+
+            <div class="heading" id="experiment-header-heading">
+                <!-- Write the name of your lab and link it to the home 
+      page of your lab (h1 tag is preferred while writing your 
+      lab name)-->
+                <a href="../index.html">Virtual Satellite Image Processing and Analysis Laboratory</a>
+            </div><!-- Add any additional element you want to add to the lab 
+    header, For example : Help (Enclosing them with suitable 
+    div is recommended)-->
+        </header><!-- The lab article is the main content area where all the 
+  experiment content sits-->
+
+        <article id="experiment-article">
+            <!-- The lab article has an header, optional navigational 
+    menu, number of sections, an optional sidebar and a closing 
+    footer-->
+
+            <div class="breadcrumb" id="experiment-article-breadcrumb"></div>
+
+            <header class="heading" id="experiment-article-heading">
+                Contrast Enhancement
+            </header><!-- Navigation menu is useful to organize the view of 
+      multiple sections inside the article-->
+
+            <nav class="default" id="experiment-article-navigation">
+                <ul id="experiment-article-navigation-menu">
+                    <!-- The menu can be dynamically generated to contain 
+          the headings of your sections or instead write the 
+          menu items of your choice individually enclosedu in 
+          &lt;li&gt; tag as shown below-->
+                </ul>
+            </nav><!-- All the sections of your lab or experiment can be 
+      enclosed together with a div element as shown below-->
+
+            <div id="experiment-article-sections">
+                <!-- First section of the article-->
+
+                <section id="experiment-article-section-1">
+                    <div class="icon" id="experiment-article-section-1-icon">
+                    <!-- Enclose the icon image of your lab -->
+                    <img src="../images/introduction.jpg"></div>
+                    <!-- The heading for the section can be enclosed in a 
+          div tag. -->
+
+                    <div class="heading" id="experiment-article-section-1-heading">
+                        Aim
+                    </div><!-- Write the section content inside a paragraph 
+          element, You can also include images with &lt;img&gt; tag -->
+
+                    <div class="content" id="experiment-article-section-1-content">
+                        <div class="divContent">
+                            
+
+                            <p>&nbsp;</p>
+
+                            <p class="MsoNormal" style="line-height: 150%; text-align: right;">
+                            <a href="http://coep.vlab.co.in/?sub=33&amp;brch=91">
+                            <span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+
+                            <p><span style="font-size: medium; font-family: arial,helvetica,sans-serif; color: rgb(0, 0, 0);">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To enhance the contrast of input raw satellite image or image with general formats through various enhance mehods such as Linear Stretching, enhancement using Standard Deviation, Histogram Equalization etc.</span></p>
+                        </div>
+                    </div>
+                </section><!-- Second section of the article-->
+
+             
+                <section id="experiment-article-section-3">
+                    <div class="icon" id="experiment-article-section-3-icon">
+                    <!-- Enclose the icon image of your lab. -->
+                    <img src="../images/objective.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-3-heading">
+                        Theory
+                    </div>
+
+                    <div class="content" id="experiment-article-section-3-content">
+                        <div class="divContent">
+                           
+                        <p class="MsoNormal" style="line-height: 150%;">&nbsp;</p>
+
+                            <p class="MsoNormal" style="line-height: 150%; text-align: right;">
+                            <a href="../index.html"><span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+                           
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Contrast is the difference in the intensity of the object of interest compared to the background (rest of the image). The perceptual contrast does not change linearly with the difference in the intensity. The perceptual contrast is a function of the logarithm of the difference in the object and background intensities. This means that in the darker regions, small changes in intensity can be noticed, but in brighter regions, the difference has to be much more. Contrast in the input images is often poor due to inadequate range of reflectance from ground targets, campus ageing sensors, etc. so that the full range of display medium is not utilized.</span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>For better understanding of contrast enhancement you should watch all the recommended videos :</span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b> Video For Contrast Of An Image</b>
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                There are several ways through which one can obtain contrast enhanced image. Some of them are :
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Linear Contrast Enhancement</b>
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Suppose the display range of the monitor is O<sub>min</sub> to O<sub>max</sub>, which means the monitor can display (O<sub>max</sub> O<sub>min</sub> + 1) levels. Let the input range be I<sub>min</sub> to I<sub>max</sub>. When the input image has poor contrast, then the range of gray levels in the image is much less than the display range of the monitor:</span></p>
+
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                (O<sub>max</sub> – O<sub>min</sub>) >> (I<sub>max</sub> – I<sub>min</sub>)
+                            </span></p>
+
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                If I<sub>max</sub> is in the left half of the gray scale, then the image appears dark. If I<sub>min</sub> appears in the right half of the gray scale, then the image appears light or faded out.
+                            </span></p>
+                            <br>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Low contrast images can be linearly enhanced using simple contrast stretch operations. Then the linear contrast stretch operation is defined by</span></p>
+                            <br>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                y=((O<sub>max</sub> − O<sub>min</sub>)/(I<sub>max</sub> − I<sub>min</sub>))*( x − I<sub>min</sub> )
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'><p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            x is the input level and y is the output level.
+                            </span></p></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <b>Video For Linear Contrast Enhancement</b>
+                            </span></p>
+
+                            <br>
+                            <h3 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            Standard Deviation Based Contrast Enhancement</span></h3>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'><p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Most software packages perform default contrast enhancement prior to display of an image. In such cases, automatic computation of I<sub>max</sub> and I<sub>min</sub> are computed as
+                            </span></p></span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>The image for the second band, …, up to Band K follow. Ideally suited when the multi-band image is processed one band at a time, such as image enhancement, neighbour-hood filtering, etc. More overheads when all band values are required at each pixel.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            I<sub>min</sub> = µ – k.σ<br>
+                            I<sub>max</sub> = µ + k.σ
+                            </span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>k is an integer, often equal to 1 or 2, µ is mean and σ is the standard deviation. <br>This is also referred to as Standard Deviation Stretch.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Human visual system is not linear; so are films and computer monitors When we wish to examine the details in the dark portion of the image at the expense of the bright portion, then linear contrast stretch is not very useful.</span></p>
+
+                            <br>
+                            <h3 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            Histogram Equalization Based Contrast Enhancement</span></h3>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>When the image contains very few similar valued gray levels, then the ability to interpret it is hampered. It is desirable that the dynamic range of the display device is better utilized. One way to achieve this is by transforming the image such that all gray levels have equal likelihood of occurrence.</span></p>
+
+                            <br>
+                            <h3 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            <i>Principal of Histogram Equalization:</i></span></h3>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Given an imperfect histogram, and an ideal histogram that has equal population of all gray levels, map the input histogram to approximate the “equalized” histogram.</span></p>
+
+                            <br>
+                            <h3 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            <i>How to equalize?</i></span></h3>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Essentially, the enhanced image which has an equalized histogram has (ideally) equal number of pixels at each gray level. In practice, we can only achieve an approximation of it. For an equalized histogram, the cumulative histogram is known, given the size of the image and the number of gray levels. For a gray level, corresponding to its cumulative frequency, find the nearest gray level that matches the ideal cumulative frequency. Therefore image enhancement by histogram equalization is achieved by the mapping of the actual cumulative histogram of the image and the desired cumulative histogram.</span></p>
+
+                            <br>
+                            <h3 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            <i>Interpretation of Histogram Equalization</i></span></h3>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                                <ul>
+                                    <li>Number of distinct non-zero gray levels in the output reduced.</li>
+                                    <li>This happens when the input histogram has long tails.</li>
+                                    <li>Histogram equalization optimizes the utilization of the available display range.</li>
+                                    <li>Merges gray levels having very few pixels.</li>
+                                    <li>Separates those levels that are heavily populated.</li>
+                                </ul>
+                            </span></p>
+
+                            <br>
+                            <h3 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            <i>Video For Histogram Equalization Based Contrast Enhancement</i></span></h3>
+
+                            <br>
+                            <h3 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            <i>Logarithmic Contrast Enhancement</i></span></h3>
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Equation for Logarithmic contrast enhancement can be expressed as:</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>y = k.log(1+x) + c</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Nature of log curve – rapid rise initially, and levels off later. Greater difference in values of log function for smaller gray levels, smaller difference for larger gray levels.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Nature of logarithmic function can be seen through the graph below:</span></p>
+                            <br>
+                            <img src="images/image001.png" style="width: 480px; height: 304px;">
+                            <h3 style="font-weight: bold">
+                            <span lang="EN-IN" style='font-family: "Verdana","sans-serif";'>
+                            <i>Exponential Contrast Enhancement</i></span></h3>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            y = k.x<sub>r</sub> + c
+                            <br>
+                            The exponential curve rises much faster for higher values of the argument of exp(.).
+                            </span></p>
+                            </div></div></section>
+
+
+                
+
+                <section id="experiment-article-section-5">
+                    <div class="icon" id="experiment-article-section-5-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/manual.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-5-heading">
+                        Procedure
+                    </div>
+
+                    <div class="content" id="experiment-article-section-5-content">
+                        <div class="divContent">
+                         
+                          <p class="MsoNormal" style="line-height: 150%;">
+                            <b><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            Step by step Procedure</span></b><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>:</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>These are the general guide lines and steps that should be followed to perform the experiment :</b></span></p>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="1" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Select Image</strong>
+                                <br>
+                                Select the image on which you want to perform the experiment. 
+                                <br>
+                            <img src="images/proc21.bmp" style="height: 315px; width: 80%;"> <br>
+                                You can also upload your own images by clicking on "upload more images".
+                                </span></li>
+                            </ol>
+                            <br>
+                            <img src="images/proc6.bmp" style="height: 315px; width: 80%;">
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="2" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Choose band combination</strong>
+                                <br>
+                                As we know that an image can have more than three bands, so we need to specify which bands should be used for display purpose.
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="3" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Click on "Display" button</strong>
+                                <br>
+                                This will take the parameters you provided and process them. The output will be shown to you as: 
+                                </span></li>
+                            </ol>
+                            <br>
+                            <img src="images/proc22.bmp" style="height: 315px; width: 80%;">
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select the method of contrast enhancement. </span>
+                                <br>
+                                You can select one of the method of contrast enhancement from Linear, Standard Deviation, Histogram Equalization, Logarithmic, Exponential or Decorrelation based streching. Enter the required parameter.
+                                </li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="5" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                <strong>Click on the button "Process"</strong>
+                                <br>
+                                This will give you the enhanced version of original image as output.
+                                </span></li>
+                            </ol>
+                            </div><br>
+                        </div>
+                </section>
+
+                <section id="experiment-article-section-4">
+                    <div class="icon" id="experiment-article-section-4-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/simulation.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-4-heading">
+                        Simulator
+                    </div>
+
+                    <div class="content" id="experiment-article-section-4-content">
+                        <div class="divContent">
+                            <p><a href="../siplab-simulation/index.php" target="_blank">Click here for Simulator</a></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experiment-article-section-10">
+                    <div class="icon" id="experiment-article-section-10-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/simulation.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-10-heading">
+                        Interpretation
+                    </div>
+
+                    <div class="content" id="experiment-article-section-10-content">
+                        <div class="divContent">
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>Here we will discuss how to interpret the outputs produced by experiment 2, i.e., Contrast Enhancement. So, please follow the steps as shown below to get the sample output for interpretation.</span></p>
+
+                            <br>
+
+                            <ol start="1" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select "inputimage" as your experimental image. "inputimage" is a satellite image having 6 bands stored in BIL format as raw image. It has the dimension 801x1401. Since in our discussion we will cover upto its 4th band, so it is necessary to understand that what the first 4 bands of this image represents. The first four bands are as follows: blue, green, red and infra-red respectively.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="2" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Choose "view color composite", it is already set as default.
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="3" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Select band 4 for red band, band 3 for green band and band 2 for blue band. As according to the theory described in theory section of Virtual Lab, we already know that a standard FCC uses infra-red wave band as red display, red wave band as green display and green wave band as blue display. So, the same we are doing here to get the standard FCC of "inputimage".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <ol start="4" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on Display button
+                                </span></li>
+                            </ol>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>After the processing you will get an image. This is the standard FCC of "inputimage". You can also save it by right clicking it and then clicking on "save image as". The image will look like:</span></p>
+                            <br>
+                            <img src="images/exp1_fcc.jpg" style="height: 396px; width: 711PX;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>You will also get histogram for the bands selected for display. The histogram in our case will be:</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Histogram for Infra-red  Band (displayed as red in fcc):</b></span></p>
+                            <br>
+                            <img src="images/exp1_hist_red.jpg" style="height: 380px; width: 589px;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                               Here, you can easily notice that most of the pixels are assigned between grey level 10 to 20. Also, another majority of pixels are assigned to gray level 60 to 120. We, will be comparing the histograms of the three bands (green, red and infra-red) used in the example for understanding what we can easily get from image histogram.</span></p>
+
+                              <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Histogram for Red Band  (displayed as green in fcc):</b></span></p>
+                            <br>
+                            <img src="images/exp1_hist_green.jpg" style="height: 380px; width: 589px;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                              Here, it can be noticed that most of the pixels are assigned between gray level 25 to 70 and a wide range of grey level is not used.</span></p>
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Histogram for Green Band (displayed as blue in fcc): </b></span></p>
+                            <br>
+                            <img src="images/exp1_hist_blue.jpg" style="height: 380px; width: 589px;">
+
+                            <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                              Here, it is almost similar to red band, i.e., most of the pixels are assigned between gray level 30 to 70. Now, as seen from the histogram of the three bands, it can be concluded that the contrast of infra-red band is highest among these three bands. As it has been provided in theory (see video lecture), that for a good contrast a histogram should be well distributed among all the gray levels. Other attributes that we can get from histogram are: mean, median, variance, standard deviation, etc. (see video lecture).</span></p>
+
+                              <p class="PreformattedText" align="justify">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            <b>Now, we are going to apply contrast enhancement over "inputimage". To do so, continue your steps in the experiment as:</b></span></p>
+
+
+                            <ol start="5" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Choose the method of contrast enhancement. Here we will choose "Standard Deviation". (It is set by default)<br>
+                                Here, we are going to interpret the results after application of enhancement using standard deviation. For other methods you can interpret the result in similar manner using theory for respective methods.
+                                </span></li>
+                            </ol>
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                           <ol start="6" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                 Enter "2" as "standard deviation".
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span>By doing so, we are limiting the stretch to [mean-2*(standard deviation)] to [mean+2*(standard deviation)]. Where, mean and standard deviation is computed over a particular band.</p>
+
+                           <ol start="7" type="1">
+                                <li class="MsoNormal" style="line-height: 150%;"><span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                                Click on "Process" button.
+                                </span></li>
+                            </ol>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; You will get the enhanced image and histogram of each band used for display after enhancement, which will be as follows:</span></p>
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>Enhanced image</b></span></p>
+                            <br>
+                            <img src="images/exp2_enhanced.jpg" style="height: 396px; width: 711PX;">
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>Histogram after enhancement for red band</b></span></p>
+                            <br>
+                            <img src="images/exp2_band1.jpg" style="height: 396px; width: 711PX;">
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>Histogram after enhancement for green band</b></span></p>
+                            <br>
+                            <img src="images/exp2_band2.jpg" style="height: 396px; width: 711PX;">
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>Histogram after enhancement for blue band</b></span></p>
+                            <br>
+                            <img src="images/exp2_band3.jpg" style="height: 396px; width: 711PX;">
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>Interpretation using histograms</b></span></p>
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; Now, as you can see that the histograms before enhancement were concentrated around few gray levels but after enhancement in all the three bands distribution of gray levels is uniform from 0 to 255. Since, for the same number of pixels the gray levels used are much higher therefore, the output image becomes enhanced as discrimination between gray levels is increased.</span></p>
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>HISTOGRAM EQUALISATION</b></span></p>
+                            <br>
+                            <img src="images/image002.jpg" style="height: 278px; width: 231px;">
+                            <br>
+                            <img src="images/image004.jpg" style="height: 278px; width: 231px;">
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; Compare the two images shown above. The first one is the original sample image of quickbird.jpg. Here the gray values have been recomputed using mean and standard deviation values. You will observe that some of the areas have grown in brightness values (look in the rectangular enclosed areas). This is because a number of pixels in the darker regions have now increased gray values after histogram equalization. You can also compare the histograms to see change in pixel values for a particular gray level.</span></p>
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>LOGARITHMIC STRETCHING</b></span></p>
+                            <br>
+                            <img src="images/image006.jpg" style="height: 278px; width: 231px;">
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; As can see that after Logarithmic stretching the original image has brightened all over the image. This is because the all the pixel gray level values have been pushed towards and nearer to 255. See for yourself how the histogram looks like before and after stretching by implementing this method on quickbird.jpg.</span></p>
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>EXPONENTIAL STRETCHING</b></span></p>
+                            <br>
+                            <img src="images/image008.jpg" style="height: 278px; width: 231px;">
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; Observe that all the areas have considerably darkened in color. This is because the distribution of gray levels have been changed. The number of pixels whose gray values fall below mean of the distribution have considerably improved. Compare the histograms of both original and stretched image.</span></p>
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>DECORRELATION STRETCH</b></span></p>
+                            <br>
+                            <img src="images/image010.jpg" style="height: 278px; width: 231px;">
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; Image shown above is the result of decorrelation stretching. Here the color separation between different bands are enhanced and hence the exaggerated colors. Like all other stretching methods this technique helps in easy discrimination of features.</span></p>
+
+                            <br>
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; <b>LINEAR STRETCHING</b></span></p>
+                            <br>
+                            <img src="images/image012.jpg" style="height: 278px; width: 231px;">
+
+                            <p class="MsoNormal" style="line-height: 150%;">
+                            <span lang="EN-IN" style='font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif";'>
+                            &nbsp; Compare the original image and above image you will find a slight enhancement or increase in brightness in the regions enclosed by rectangular figures. Linear tries to distribute the gray values uniformly.</span></p>
+                        </div>
+                    </div>
+                </section>
+
+             <!--   <section id="experiment-article-section-7">
+                    <div class="icon" id="experiment-article-section-7-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                  <!--  <img src="../images/quizzes.jpg"></div>
+
+                    <div class="heading" id="experiment-article-section-7-heading">
+                        Review Questions
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-7-content">
+                        <div class="divContent">
+                            <h2 style="color: red;"><strong style=
+                            "text-decoration: underline"><span style=
+                            "font-family: arial,helvetica,sans-serif; color: rgb(255, 0, 0);">
+                            <span style="font-size: large;">Review
+                            Questions</span></span></strong></h2>
+
+                            <h2>&nbsp;</h2>
+
+                            <p class="MsoNormal" style=
+                            "line-height: 150%; text-align: right;"><a href=
+                            "http://coep.vlab.co.in/?sub=33&amp;brch=91"><span style="font-family: arial,helvetica,sans-serif; font-size: medium;">
+                            Back To Experiment List</span></a></p>
+
+                            <p>&nbsp;</p>
+
+                            <h1 style=
+                            "margin-left: 0.75in; text-align: justify; text-indent: -0.25in; line-height: 150%; page-break-after: auto;">
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            <span style="">1.<span style=
+                            'font: 7pt "Times New Roman";'>&nbsp;&nbsp;&nbsp;</span></span></span>
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            What are different sources of errors in RTD
+                            measurement?</span></h1>
+
+                            <p>&nbsp;</p>
+
+                            <h1 style=
+                            "margin-left: 0.75in; text-align: justify; text-indent: -0.25in; line-height: 150%; page-break-after: auto;">
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            <span style="">2.<span style=
+                            'font: 7pt "Times New Roman";'>&nbsp;&nbsp;&nbsp;</span></span></span>
+                            <span style=
+                            'font-size: 12pt; line-height: 150%; font-family: "Arial","sans-serif"; color: black; font-weight: normal;'>
+                            What is lead wire compensation?</span></h1>
+
+                            <p>&nbsp;</p>
+
+                            
+                            <h1>&nbsp;</h1>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            <p style="text-align: center;">&nbsp;</p>
+
+                            
+                        </div>
+                    </div>
+                </section> -->
+
+                <section id="experiment-article-section-8">
+                    <div class="icon" id="experiment-article-section-8-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                    <img src="../images/quizzes.jpg"></div>
+
+                    <div class="heading" id=
+                    "experiment-article-section-8-heading">
+                        Reference
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-8-content">
+                        <div class="divContent">
+                            
+
+                            <p class="PreformattedText"><b style=""><span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>
+                            Books</span></b><span lang="EN-IN" style='font-size: 12pt; font-family: "Verdana","sans-serif";'>:</span></p>
+
+                            <p class="PreformattedText">&nbsp;</p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [1] Rafael C. Gonzalez, Richard E. Woods and Steven L. Eddins (2004), <i> Digital Image Processing using MATLAB</i>, Pearson Education</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="margin-left: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [2]  J.A. Richards and X. Jia, Remote Sensing Digital Image Analysis, 4<sup>th</sup> edition, Springer, Berlin, 2006</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="margin-left: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [3] R. Schowengerdt, Remote Sensing: Models and Methods for Image Processing, 3<sup>rd</sup> edition, Academic Press, Mass., 2007</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style=
+                            "text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style=
+                            'font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [4] J.R. Jensen, Digital Image Processing: A Remote Sensing Perspective, 4<sup>th</sup> edition, Prentice-Hall, NJ, 2005</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [5] P.M. Mather and M. Koch, Computer Analysis of Remotely Sensed Images, John Wiley, NY, 2011</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [6] B. Tso and P.M. Mather, Classification Methods for Remotely Sensed Images, 2<sup>nd</sup> edition, CRC Press, 2009</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [7] Tim Morris (2004), Computer Vision and Image Processing, Palgrave Macmillan</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [8] Bhabatosh Chanda and Dwijest Dutta Majumder (2002), Digital Image Processing and Analysis</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [9] A. K. Jain (1989), Fundamentals of Digital Image Processing. Englewood Cliffs, NJ: Prentice Hall</span></p>
+
+                            <p class="MsoNormal" style="line-height: normal;">
+                            <span style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            &nbsp;</span></p>
+
+                            <p class="MsoNormal" style="text-indent: 0.25in; line-height: normal;">
+                            <span lang="EN-IN" style='font-size: 12pt; font-family: "Arial","sans-serif";'>
+                            [10] Raman Maini and Himanshu Aggarwal (2010), A comprehensive review of image enhancement techniques, Journal of computing, Vol. 2, Issue. 3, pno 8-13, 2010</span></p>
+                        </div>
+                    </div>
+                </section>
+
+            <!--    <section id="experiment-article-section-9">
+                    <div class="icon" id="experiment-article-section-9-icon">
+                    <!-- Enclose the icon image of your lab.-->
+                   <!--  <img src="../images/quizzes.jpg"></div>
+
+                   <!-- <div class="heading" id=
+                    "experiment-article-section-9-heading">
+                        Photo Gallery
+                    </div>
+
+                    <div class="content" id=
+                    "experiment-article-section-9-content">
+                        <p><b>Q1.</b> Time taken for one complete oscillation
+                        is called Time Period of the oscillator.<br>
+                        <input id="q1" name="q1" type="radio" value="1">
+                        True<br>
+                        <input id="q1" name="q1" type="radio" value="0">
+                        False<br>
+                        <br>
+                        <b>Q2.</b> Time period of the oscillator is constant
+                        for given values of mass, length and initial
+                        conditions.<br>
+                        <input id="q2" name="q2" type="radio" value="1">
+                        True<br></p>
+                    </div>
+                </section> -->
+            </div>
+        </article>
+	
+
+        <footer  class="footer">
+            <!-- Put the content here -->
+            <div style="margin-left:40%; margin-right:40% ">
+            <a href="../license/index.html" target="_blank" style="margin:auto"> Licensing Terms </a>
+            </div>
+      </footer> 
+    </div>
+</body>
+</html>

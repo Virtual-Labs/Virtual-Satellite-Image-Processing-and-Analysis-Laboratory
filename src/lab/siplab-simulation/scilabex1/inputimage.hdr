@@ -1,0 +1,38 @@
+bands = 6
+lines = 801
+samples = 1401
+interleave = bil
+data type = 1
+header offset = 0   
+BYTE_ORDER: NA      
+UL_X_COORDINATE: NA                   
+UL_Y_COORDINATE: NA                   
+LR_X_COORDINATE: NA                   
+LR_Y_COORDINATE: NA                   
+PIXEL_WIDTH:  NA                   
+PIXEL_HEIGHT: NA                   
+MAP_UNITS:    NA                   
+PROJECTION_NAME: NONE                                    
+PROJECTION_ZONE:    NA
+PROJECTION_PARAMETERS:
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+	NA                   
+SPHEROID_NAME: NONE                                    
+DATUM_NAME:    NONE                                    
+SEMI_MAJOR_AXIS: NA                   
+SEMI_MINOR_AXIS: NA                   
+E_SQUARED:       NA                   
+RADIUS:          NA                   

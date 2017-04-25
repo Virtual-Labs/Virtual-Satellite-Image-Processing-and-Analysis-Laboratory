@@ -1,0 +1,26 @@
+Steps
+
+1.Load SIVP toolbox. Also keep the folder with the files open in scilab file browser so it takes the image and text files path.
+
+2.Run master.sce (fname can be quickbird.jpg or inputimage, ie the 2 image available in the folder). For inputimage file it takes time to execute approx 2 mins.
+
+3.Values in RGB.txt file can be changed as required. Line is the band values for example 1 1 1 or 1 2 3 or 4 5 6 etc. Next 4 lines are row start,row end, column start and column end values of the subset image. Keeping in mind the size of the image.
+
+4. Values in win4pix.txt can also be changed as required. First line is the position of the 5x5 pixel window values ie 
+ULC :upper left corner of image OR
+URC :upper right corner of image OR
+LLC :lower left corner of image OR
+LRC :lower right corner of image OR
+Middle :middle of the image OR
+User :the position specified by user in the next 4 lines of the file
+Last line is the band from which values are taken ie 1 2 or 3.
+
+
+Outputs
+Original image
+Subset image
+Histogram image (1 image if all bands value in RGB.txt file is same, 3 images if different)
+Text file for pixel values in 5x5 window ..name will be ULC1.txt or URC1.txt like this.
+
+Note:
+Right now the function bilimage only takes the particular file inputimage and gives output. 

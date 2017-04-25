@@ -1,0 +1,13 @@
+Displaying image header information ...
+ 
+samples = 1401 
+ 
+lines = 801 
+ 
+bands = 6 
+ 
+data type = uint8
+ 
+offset = 0 
+ 
+interleave type = bil 
